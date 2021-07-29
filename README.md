@@ -39,32 +39,173 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### References
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This Calculator App built using [YouTube Videos](https://www.youtube.com/watch?v=hpfDRnijdPE, https://www.youtube.com/watch?v=n_cKSILMzmM).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Colors used from color picker using an image [https://imagecolorpicker.com/].
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# `Project Starts from here`
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```css
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+![cal1](https://user-images.githubusercontent.com/54939657/127561779-40784f6e-ae9e-499c-a145-7b49b97e9213.JPG)
+```css
+/*______________________________________________________________________________
 
-### Deployment
+  This defines properties for the entire division container
+  _______________________________________________________________________________*/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+.App {
+  background-color: black;
+  top: 40%;
+  left: 40%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 356px;
+  text-align: center;
+  margin: 0 auto;
+  border: 10px solid #393f43;
+  border-radius: 15px;
+}
+```
+![cal2_app](https://user-images.githubusercontent.com/54939657/127561784-62e32412-e3bf-4e55-9112-f796ca957752.JPG)
 
-### `npm run build` fails to minify
+```css
+/*______________________________________________________________________________
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  This defines the division for buttons
+  Used grid
+  Grid template columns are 4 for each row
+  _______________________________________________________________________________*/
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(70px, auto); 
+}
+
+```
+![cal3_buttons](https://user-images.githubusercontent.com/54939657/127561786-75d5a2e3-1bef-4312-91a5-08f45e5d2a9b.JPG)
+
+```css
+/*______________________________________________________________________________
+
+  This defines the input text filed and properties
+  _______________________________________________________________________________*/
+input[type="text"]{
+  height: 80px;
+  width: 349px;
+  background-color:#bfc5c8 ;
+  margin: 0 auto;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 28px;
+  text-align: right;
+  font-weight: 600;
+  color:#393f43;
+  letter-spacing: 1px;
+}
+
+```
+![cal4_input](https://user-images.githubusercontent.com/54939657/127561787-a715507c-6319-4648-a3da-91398e8d42a9.JPG)
+
+```css
+/*______________________________________________________________________________
+
+  This defines the properties for all the buttons
+  _______________________________________________________________________________*/
+  button{
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #1a1c1d;
+    background-image: linear-gradient(#404448,#1e2123);
+    color: #d8e7f1;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+
+```
+![cal5_button](https://user-images.githubusercontent.com/54939657/127561792-14f9cb27-208d-40d8-a0aa-180b654da15b.JPG)
+
+```css
+/*______________________________________________________________________________
+
+  This defines the cancel button i.e "Clear"
+  Used grid column for equalizing the equal button to two-colomns
+  Clear button is at the first row i.e 1st row
+  Used the gradient colors for background
+  _______________________________________________________________________________*/
+#cancel{
+  grid-column: 1/3;
+  grid-row: 1;
+  background-image: linear-gradient(#86989a,#706b63);
+}
+```
+![cal6_cancel](https://user-images.githubusercontent.com/54939657/127561803-6600fe89-2df7-456e-aa22-c9a42853deda.JPG)
+
+```css
+/*______________________________________________________________________________
+
+  This defines the result button i.e "="
+  Used grid column for equalizing the equal button to two-colomns
+  Equal button is at the last row i.e 5th row
+  Used the gradient colors for background
+  _______________________________________________________________________________*/
+#results{
+  grid-column: 3/5;
+  grid-row: 5;
+  color: #dfedf7;
+  background-image: linear-gradient(#c98a40,#995b2c, #774827);
+}
+
+
+```
+![cal7_results](https://user-images.githubusercontent.com/54939657/127561812-e4735876-8538-4fb7-903a-61730d961a51.JPG)
+
+```css
+
+ /*______________________________________________________________________________
+
+  This defines the color for all the operator buttons
+  Addition, Divide, Multiplication, Substration, and dot
+  Used the gradient background color
+  _______________________________________________________________________________*/
+#operator{
+  background-image: linear-gradient(#4d5e6d,#3b4d66);
+  color: white;
+  font-weight: 900;
+}
+
+```
+![cal8_operator](https://user-images.githubusercontent.com/54939657/127561819-8bd874fd-e1e5-4d54-a1d0-9ef7269c977d.JPG)
+
+```css
+/*______________________________________________________________________________
+
+  This defines the color for the Button "C"
+  Used the gradient background color
+  _______________________________________________________________________________*/
+#backspace{
+  background-image: linear-gradient(#4d5e6d,#ccd0d2);
+}
+```
+![cal9_backspace](https://user-images.githubusercontent.com/54939657/127561820-cdacaaa0-6f4b-489b-8da7-1e27fa869ecd.JPG)
+
+
+## After adding all the above css code
+# The Final Calculator App is looks like this
+![finalCalculator](https://user-images.githubusercontent.com/54939657/127561821-728aada1-fa5d-4aa1-a13e-d040edafb89e.JPG)
+
