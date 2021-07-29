@@ -4,17 +4,54 @@ import { useState } from 'react';
 const App = () => {
   const [result, setResult] =useState(" ");
 
+  /*
+    ______________________________________________________________________________
+  __________________________________________________________________________________
+  This defines the OnClick event for Button values:
+  Once you click on the button it will call to handleClick function
+  Here, it will concatanate the values which are clicked to setResult
+  __________________________________________________________________________________
+   _______________________________________________________________________________
+  */
   const handleClick = (val) =>{
     setResult(result.concat(val.target.name));
   }
+  /*
+    ______________________________________________________________________________
+  __________________________________________________________________________________
+  This defines the OnClick event for the Back Space:
+  Once you click on the "C" button it will call to backSpace function
+  Here, it will remove the latest value from input text and set setResult
+  __________________________________________________________________________________
+   _______________________________________________________________________________
+  */
 
   const backSpace = () => {
     setResult(result.slice(0,-1)); //you can use this on as well result.length-1
   }
 
+    /*
+    ______________________________________________________________________________
+  __________________________________________________________________________________
+  This defines the OnClick event for the Clear Input:
+  Once you click on the "Clear" button it will call to clearInput function
+  Here, it will remove all the values from input and set setResult to the empty
+  __________________________________________________________________________________
+   _______________________________________________________________________________
+  */
   const clearInput = () => {
     setResult("");
   }
+    /*
+    ______________________________________________________________________________
+  __________________________________________________________________________________
+  This defines the OnClick event for the calculate the Result:
+  Once you click on the "=" equal button it will call to calculateResult function
+  Here, it will evalute the values from result and set setResult
+  But, one condition here we may enter many symbols so it should return the error
+  __________________________________________________________________________________
+   _______________________________________________________________________________
+  */
 
   const calculateResult = () =>{
     try{
@@ -51,7 +88,6 @@ const App = () => {
          <button id="operator" name="." onClick={handleClick}>. </button>
          <button id="results" onClick={calculateResult}>= </button>
        </div>
-
      </div>
     </div>
   );
